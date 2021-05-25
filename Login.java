@@ -11,17 +11,17 @@ public class Login {
 
 	public void Student() {
 		try {
-			System.out.println("Enter your Mail Id : ");
-			String emailId = sc.nextLine();
-			System.out.println("Enter your Password : ");
-			String password = sc.nextLine();
+		System.out.println("Enter your Mail Id : ");
+		String emailId = sc.nextLine();
+		System.out.println("Enter your Password : ");
+		String password = sc.nextLine();
 			
-			boolean exist = false;
+		boolean exist = false;
 			
-			Connection connection = DriverManager.getConnection(jdbcURL, user, pass);
-		    String query = "SELECT sEmailId, sPassword FROM student";
-		    Statement statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery(query);
+		Connection connection = DriverManager.getConnection(jdbcURL, user, pass);
+		String query = "SELECT sEmailId, sPassword FROM student";
+		Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery(query);
 		    while (rs.next()) {
 			    String email = rs.getString("sEmailId");
 			    String pwd =  rs.getString("sPassword");
