@@ -36,10 +36,10 @@ public class Student {
 		
 	public void takeExam(){		
 		try {
-			Connection connection = DriverManager.getConnection(jdbcURL, user, pass);
+		    Connection connection = DriverManager.getConnection(jdbcURL, user, pass);
 		    String query = "SELECT * FROM question";
 		    Statement statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery(query);
+		    ResultSet rs = statement.executeQuery(query);
 		    while (rs.next()) {
 		    	int id = rs.getInt("questionNo");
 			    String ques = rs.getString("question");
